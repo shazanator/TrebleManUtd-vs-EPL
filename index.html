@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fergie's Time Machine | '99 United vs Modern PL</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/manutd-99.jpg" alt="Man Utd 1999" class="team-logo">
+            <h1>Fergie's Time Machine</h1>
+            <img src="assets/premier-league.png" alt="Premier League" class="team-logo">
+        </div>
+        <p class="subtitle">Simulating how the iconic treble winners would fare against today's plastic franchise teams</p>
+    </header>
+
+    <main>
+        <section class="team-selector">
+            <div class="team-card" id="manutd-99">
+                <h2>Manchester United 1998-99</h2>
+                <div class="team-stats">
+                    <div class="stat">
+                        <span class="stat-value">42</span>
+                        <span class="stat-label">Games Unbeaten</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">3</span>
+                        <span class="stat-label">Trophies</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">∞</span>
+                        <span class="stat-label">Fergie Time</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vs-circle">
+                <span>VS</span>
+            </div>
+
+            <div class="team-card" id="modern-team">
+                <h2>Select Opponent</h2>
+                <select id="opponent-select">
+                    <option value="">-- Choose Current PL Team --</option>
+                    <option value="mancity">Man City</option>
+                    <option value="arsenal">Arsenal</option>
+                    <option value="liverpool">Liverpool</option>
+                    <option value="chelsea">Chelsea</option>
+                    <option value="tottenham">Tottenham</option>
+                    <option value="newcastle">Newcastle</option>
+                </select>
+                <button id="simulate-btn">⚡ Simulate Match</button>
+            </div>
+        </section>
+
+        <section id="match-result" class="hidden">
+            <div class="scoreline">
+                <span class="team">Man Utd '99</span>
+                <span id="manutd-score" class="score">0</span>
+                <span class="separator">-</span>
+                <span id="opponent-score" class="score">0</span>
+                <span id="opponent-name" class="team">Opponent</span>
+            </div>
+
+            <div class="match-details">
+                <div class="detail-card">
+                    <h3>⚽ Goal Scorers</h3>
+                    <ul id="goals-list"></ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>🟨🟥 Cards Shown</h3>
+                    <ul id="cards-list"></ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h3>⭐ Player of the Match</h3>
+                    <p id="potm"></p>
+                </div>
+            </div>
+
+            <div class="commentary">
+                <p id="match-commentary"></p>
+            </div>
+
+            <div class="stats-comparison">
+                <canvas id="statsChart"></canvas>
+            </div>
+
+            <button id="simulate-again">🔄 Run Another Simulation</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
